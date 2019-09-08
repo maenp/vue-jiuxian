@@ -1,0 +1,28 @@
+const path=require("path")
+module.exports={
+    devServer:{
+        proxy:{//跨域配置
+            "/m_v1":{
+                target:"https://m.jiuxian.com",
+                changeOrigin:true
+            }
+        }
+    },
+    configureWebpack:{//别名配置
+        resolve:{
+            alias:{
+                "@":path.join(__dirname,"./src"),
+                "@api":path.join(__dirname,"./src/api"),
+                "@common":path.join(__dirname,"./src/common"),
+                "@components":path.join(__dirname,"./src/components"),
+                "@lib":path.join(__dirname,"./src/lib"),
+                "@pages":path.join(__dirname,"./src/pages"),
+                "@router":path.join(__dirname,"./src/router"),
+                "@static":path.join(__dirname,"./src/static"),
+                "@store":path.join(__dirname,"./src/store"),
+                "@utils":path.join(__dirname,"./src/utils"),
+            }
+        }
+    }
+}
+//https://m.jiuxian.com/m_v1/promote/qgajax.do?t=1567941747379&pagenum=1&tabnum=1
